@@ -12,27 +12,3 @@ Researchers might have the tendency to test multiple hypothesis and only present
 
 A valid research process should therefore entail a batch of robustness tests once the researcher individuates a potential profitable investment strategy with strong economic underpinnings. Testing the investment signal across different markets consistues one of these robustess tests. In the next lines I show why this is a good idea from a statistical standpoint. In fact testing a signal on different markets reduces the probability of picking up false strategies (i.e. false positives).
 
-**Sharpe Ratio, t-statistic and the probability of false discoveries**
-
-Given an investment strategy:
-$$
-\begin{align}
-r_{t,strategy} & = r_{t,market} \ x \ signal_{t-1,strategy}\\
-\end{align}
-$$
-
-Its goodness is usually evaluated through the Sharpe Ratio (SR):
-$$
-\begin{align}
-SR & = \frac{\mu}{\sigma}
-\end{align}
-$$
-where $\mu = E(r_{t,strategy})$ and $\sigma = \sqrt{VAR(r_{t,strategy})}$. 
-
-From a statistical standpoint, the level of significance is usually evaluated by referring to the t-statistic. Values choosen can be 1.645, 1.96, or 2.58 which corresponds respectively to the level of significance of 10%, 5%, or 1%. 
-A t-statitic greater than the pre-specified levels leads the researcher to refuse the null hpyothesis in favor of the alternative. In the opposite case the null hypothesis is accepted. The bigger the value of the t-statistic, the easier for the resarcher (and the higher her/his confidence) to reject the null hypothesis.
-I remind that the level of significance associated to the t-statistic corresponds to the probability of incorrectly rejecting the null hypothesis when the null is true (i.e. false positive). 
-
-What is the implication? This means that by assuming normally distributed returns, under the null hypothesis (no predictability existing), by testing 100 strategies, respectively 10,5,1 will present a t-stat higher than respectively 1.64,1.96,2.58 merely due to chance. In these 10,5,1 cases the researcher would be incorrectly induced to reject the null hypothesis in favor of predictability. In other words, the more strategies we test, the more strategies with a significant t-statistic we will encounter.
-
-This reasoning can also be translated to the Sharpe Ratio. The Sharpe Ratio is directly related to the $t-statistic$, as  $t-statistic = \sqrt{n}SR$. Similarly as before, the higher the SR, the higher the likelihood of rejecting the null hyptothesis of non-predictability. In other words, the higher the SR, the smaller the probability that our SR is purely due to chance (noise in the data), but reflects istead true predictability that our investment signal captures. 
