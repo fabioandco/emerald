@@ -1,3 +1,5 @@
+<!--
+
 ---
 title: Code Syntax
 ---
@@ -34,3 +36,4 @@ def hello
 end
 
 {% endhighlight %}
+-->
