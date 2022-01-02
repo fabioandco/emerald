@@ -43,7 +43,7 @@ A solution to reduce false positives is to test the same signal on more (uncorre
 
 $$
 \begin{align}
-P(false \ positive) & = (1-P(t<\sqrt{n} \ SR_{1})) \  x \  (1-P(t<\sqrt{n} \ SR_{2}))
+P(false \ positive) & = (1-P(t<\sqrt{n} \ SR_{1})) \times \  (1-P(t<\sqrt{n} \ SR_{2}))
 \end{align}
 $$
 
@@ -72,8 +72,6 @@ autoNumber: "AMS"
 });
 </script>
 
-$$
-\begin{align}
-P(false \ positive) & = (1-P(t<\sqrt{n} \ SR_{1})) \  x \  (1-P(t<\sqrt{n} \ SR_{2}))
-\end{align}
-$$
+<pre><code class="python">
+print "hello world"
+</code></pre>
