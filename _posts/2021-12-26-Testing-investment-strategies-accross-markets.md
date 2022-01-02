@@ -73,5 +73,30 @@ autoNumber: "AMS"
 </script>
 
 <pre><code class="python">
-print "hello world"
+from scipy.stats import t
+import numpy as np
+
+years_of_backtest = 12
+n = 12 * years_of_backtest
+
+SR_1 = 0.49 #Assuming annualized Sharpe Ratio is 0.49
+
+probability_false_positive =1-t.cdf(SR_1*np.sqrt(n/12),n,0,1) #n are the degress of freedom
+print("P(false positive)={}".format(np.round(probability_false_positive,3)))
+>>> P(false positive)=0.046
+</code></pre>
+
+In the 4.6% of cases we wrongly reject the null hypothesis of 0 SR in favor of a profitable investment strategy. 
+
+If we now test the same investment strategy on a second market and we find a SR of 0.49 again, the probability of finding a signal with such a SR on both markets under the null hypothesis would be only 0.2% compared to the 4.6% when testing on a single market.
+
+<pre><code class="python">
+SR_2 = SR_1
+
+market_1 = 1-t.cdf(SR_1*np.sqrt(n/12),n,0,1) #n are the degress of freedom
+market_2 = 1-t.cdf(SR_2*np.sqrt(n/12),n,0,1) #n are the degress of freedom
+
+probability_false_positive = market_1 * market_2
+print("P(false positive)={}".format(np.round(probability_false_positive,3)))
+>>> P(false positive)=0.002
 </code></pre>
