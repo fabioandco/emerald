@@ -52,3 +52,4 @@ where $SR_1$, $SR_2$ are the sharpe ratios of the investment strategy implemente
 ### An example:
 
 As an example, assume a strategy with a SR of 0.49, backtested on 12 years of history:
+
