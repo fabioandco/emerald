@@ -53,6 +53,9 @@ where $SR_1$, $SR_2$ are the sharpe ratios of the investment strategy implemente
 
 As an example, assume a strategy with a SR of 0.49, backtested on 12 years of history:
 
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {
@@ -68,3 +71,9 @@ autoNumber: "AMS"
 }
 });
 </script>
+
+$$
+\begin{align}
+P(false \ positive) & = (1-P(t<\sqrt{n} \ SR_{1})) \  x \  (1-P(t<\sqrt{n} \ SR_{2}))
+\end{align}
+$$
