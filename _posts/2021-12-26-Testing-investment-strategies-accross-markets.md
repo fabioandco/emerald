@@ -100,3 +100,26 @@ probability_false_positive = market_1 * market_2
 print("P(false positive)={}".format(np.round(probability_false_positive,3)))
 >>> P(false positive)=0.002
 </code></pre>
+
+### References:
+
+Riondato, 2018, Sharpe Ratio: Estimation, Confidence Intervals, and Hypothesis Testing
+
+t-distribution, https://en.wikipedia.org/wiki/
+
+### Appendix:
+
+####  The distribution of the Sharpe Ratio
+
+
+Under the assumption that the strategy's excess returns $r_{t,strategy}$ are normally, identical, and independently distributed, and under the null hypothesis of no predictability from the signal, $\sqrt{n} SR$ follows a t-distribution with n-1 degres of freedom (location 0, and scale 1). I recall that for n that tends to infinity, its distribution converges to a normal one.
+
+####  t-distribution
+
+Student's t distribution with n – 1 degrees of freedom models the t-statistic
+
+$
+t = \frac{\bar{x} - \mu}{s / \sqrt(n)}
+$
+
+where $\bar{x}$ is the sample mean and $s$ is is the sample standard deviation of a random sample of size n from a normal population with mean $\mu$. 
