@@ -1,11 +1,11 @@
 # Site settings
-title: Emerald | A simple Jekyll blog
-description: "A minimal blog template, build with Jekyll."
-url: "http://www.jacoporabolini.com/emerald"
+title: My Journey Into Quant Finance
+description: 
+url: "https://github.com/fabioandco/my-journey-into-quant-finance/edit/gh-pages/_config.yml"
 author:
-  name: "Jacopo Rabolini"
-  email: "hello@jacoporabolini.com"
-  url: "http://www.jacoporabolini.com"
+  name: "Fabio"
+  email: ""
+  url: ""
 
 # Build settings
 baseurl: /my-journey-into-quant-finance/ # Change this to your relative path (ex: /blog/), or leave just a /
