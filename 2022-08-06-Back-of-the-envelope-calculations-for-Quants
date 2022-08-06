@@ -1,0 +1,24 @@
+---
+title: Back of the envelope calculations for Quants
+---
+
+Here a few tricks that help buy-side quants to quickly answer some questions in their daily job. Please feel free to reach out if you have any interesting to add to the list!
+
+1) How promising is a signal from an academic paper? Information Ratio (IR) from a regression r-squared/correlation coefficient
+Many times quants look for ideas by reading acadamic papers. It is often the case that in academic settings predictabiltiy of a signal is tested using a regression framework and not by testing an investment strategy on the signal. 
+To understand, whether that predictabiliy would correspond to a weak IR of 0.20 or a very good IR of 0.80, or unrealistic IR of 1.5 (for a single signal on medium frequencies) We can use the Expected IR based on Hallerbach (2014) paper who derives an Expected Information Ratio from the correlation coefficient between the signal and the market returns (which is nothing else than the square root of the r-squared of a predictive regression, where the signal is used to predict the market return)
+
+2) How much portfolio's volatility decreases if we add an uncorrelated signal or asset? 
+
+3) From t-stat to IR
+
+4) From arithmetic average return to cagr 
+- From arithmetic to geometric return (cagr) cagr = e(r) - 1/2*sigma2
+
+
+References 
+W.G. Hallerbach,2014,On the Expected Performance of Market Timing Strategies, The Journal of Portfolio Management Summer 2014
+
+
+
+
