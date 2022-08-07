@@ -10,11 +10,16 @@ To understand, whether that predictabiliy would correspond to a weak IR of 0.20 
 
 2) How much portfolio's volatility decreases if we add an uncorrelated signal or asset? 
 
-3) From t-stat to IR
+3) How much added value does this signal has at portfolio level? 
+Assuming all what matters, are the first and the second moment of the distribution, it is possibile to quantify how much the return of a portfolio would increase by adding an additional signal to it (under its best settings).
+By dividing for the volatiltiy of the residual, it is also possibile to quantify the added value in terms of risk-adjusted performance (IR).
 
-4) From arithmetic average return to cagr 
+4) From t-stat to IR
+Very straightforwardly, starting from the definition of t-statistic for the average, the IR is nothing else then:
+
+5) From arithmetic average return to cagr 
 - From arithmetic to geometric return (cagr) cagr = e(r) - 1/2*sigma2
-
+Mention difference between the two is given by the volatiltiy drag. 
 
 References 
 W.G. Hallerbach,2014,On the Expected Performance of Market Timing Strategies, The Journal of Portfolio Management Summer 2014
