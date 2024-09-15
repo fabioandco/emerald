@@ -31,6 +31,7 @@ $$
 SR & = \frac{\mu}{\sigma}
 \end{align}
 $$
+
 where $\mu = E(r_{t,strategy})$ and $\sigma = \sqrt{VAR(r_{t,strategy})}$. 
 
 From a statistical standpoint,  how significant is this result? Statistical significance is usually evaluated by referring to the t-statistic. Values chosen can be (+/-) 1.645, 1.96, or 2.58 (for a two-sided test) which corresponds respectively to the level of significance of 10%, 5%, or 1%. 
