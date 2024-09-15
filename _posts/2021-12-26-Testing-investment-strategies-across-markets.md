@@ -1,5 +1,5 @@
 ---
-title: Testing investment strategies across markets? A good idea to increase robustness and protect from over-fitting
+title: Testing investment strategies across markets? A robustness test to protect from false discoveries
 ---
 
 In the following lines, I propose a robustness test for systematic investment strategies that consists in testing an investment signal across different markets. 
