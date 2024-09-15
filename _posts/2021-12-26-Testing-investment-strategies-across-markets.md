@@ -17,6 +17,7 @@ A healthy research process should entail a batch of robustness tests once the re
 Let's start the research by testing an alpha signal (e.g. growth nowcast) to predict government bond returns. Before testing it, we explicit the economic rationale: we hypothesize that higher(lower) growth predicts lower(higher) bond returns (i.e. negative relation).
 
 We then test the alpha signal using the following investment strategy: 
+
 $$
 \begin{align}
 r_{t,strategy} & = r_{t,market} \ x \ (- signal_{t-1,strategy})\\
@@ -24,6 +25,7 @@ r_{t,strategy} & = r_{t,market} \ x \ (- signal_{t-1,strategy})\\
 $$
 
 We then evaluate the quality of the alpha signal via a common metric, the Sharpe Ratio (SR):
+
 $$
 \begin{align}
 SR & = \frac{\mu}{\sigma}
