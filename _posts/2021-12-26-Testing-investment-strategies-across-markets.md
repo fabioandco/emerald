@@ -46,7 +46,7 @@ Given that at the beginning, we specified that we expect the signal to predict r
 
 ### Probability of false discoveries when testing on different markets
 
-A solution to reduce false positives is to test the same signal on more (uncorrelated) markets. The markets to select are the ones that show similar dynamics and from where we might expect similar predictability to be picked up by the signal. An example is the currency and bonds markets, where an alpha signal like growth affects both asset classes (with opposite signs). Then, the probability of having a specific SR or bigger  under the null hypothesis (no-predictability) in both markets, which I term here as the probability of having a false positive, is given by the product:
+A solution to reduce false positives is to test the same signal on more (uncorrelated) markets. The markets to select are the ones that show similar dynamics and from where we might expect similar predictability to be picked up by the signal. An example is the currency and bond markets, where an alpha signal like growth affects both asset classes (with opposite signs). Then, the probability of having a specific SR or bigger  under the null hypothesis (no-predictability) in both markets, which I term here as the probability of having a false positive, is given by the product:
 
 $$
 \begin{align}
