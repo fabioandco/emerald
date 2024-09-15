@@ -1,27 +1,29 @@
 ---
-title: Testing investment strategies accross markets? A good idea to increase robustness and protect from over-fitting
+title: Testing investment strategies across markets? A good idea to increase robustness and protect from over-fitting
 ---
 
 In the following lines, I propose a robustness test for systematic investment strategies that consists in testing an investment signal across different markets. 
-Robustness tests are a key step of a healthy research process: they increase the burden of criteria that investments strategies have to pass before being deployed live and in this way they can reduce the likelihood of finding false investment strategies. 
-In this post, I will provide some evidence that testing an investment signal across multiple markets makes sense also from a statistical standpoint.
+Robustness tests are a key step of a healthy research process: they increase the burden of criteria that investment strategies have to pass before being deployed live and in this way they can reduce the likelihood of finding false investment strategies. 
+In this post, I will show why testing an investment signal across multiple markets makes sense from a statistical standpoint.
 
 ### Intro 
 
 Researchers might tend to test multiple hypotheses and only present the successful ones (this is known as selection bias). On top of that, testing many hypotheses under different settings can easily lead to false discoveries (a strategy that appears successful in the backtest sample just because of noise in the data and not because of a true pattern that is exploited by the strategy).
 
-A valid research process should therefore entail a batch of robustness tests once the researcher individuates a potentially profitable investment strategy with strong economic underpinnings. Testing the investment signal across different markets constitutes one of these robustness tests. In the next lines, I show why this is a good idea from a statistical standpoint. In fact, testing a signal on different markets reduces the probability of picking up false strategies (i.e. false positives).
+A healthy research process should entail a batch of robustness tests once the researcher individuates a potentially profitable investment strategy. Testing the investment signal across different markets constitutes one of these robustness tests. In the next lines, I show why this is a good idea from a statistical standpoint. In fact, testing a signal on different markets reduces the probability of picking up false strategies (i.e. false positives).
 
 ### Sharpe Ratio, t-statistic and the probability of false discoveries
 
-Given an investment strategy:
+Let's start the research by testing an alpha signal (e.g. growth nowcast) to predict government bond returns. Before testing it, we explicit the economic rationale: we hypothesize that higher(lower) growth predicts lower(higher) bond returns (i.e. negative relation).
+
+We then test the alpha signal using the following investment strategy: 
 $$
 \begin{align}
-r_{t,strategy} & = r_{t,market} \ x \ signal_{t-1,strategy}\\
+r_{t,strategy} & = r_{t,market} \ x \ (- signal_{t-1,strategy})\\
 \end{align}
 $$
 
-Its goodness is usually evaluated through the Sharpe Ratio (SR):
+We then evaluate the quality of the alpha signal via a common metric, the Sharpe Ratio (SR):
 $$
 \begin{align}
 SR & = \frac{\mu}{\sigma}
@@ -29,17 +31,19 @@ SR & = \frac{\mu}{\sigma}
 $$
 where $\mu = E(r_{t,strategy})$ and $\sigma = \sqrt{VAR(r_{t,strategy})}$. 
 
-From a statistical standpoint, the level of significance is usually evaluated by referring to the t-statistic. Values chosen can be 1.645, 1.96, or 2.58 which corresponds respectively to the level of significance of 10%, 5%, or 1%. 
+From a statistical standpoint,  how significant is this result? Statistical significance is usually evaluated by referring to the t-statistic. Values chosen can be (+/-) 1.645, 1.96, or 2.58 (for a two-sided test) which corresponds respectively to the level of significance of 10%, 5%, or 1%. 
 A t-statistic greater than the pre-specified levels leads the researcher to refuse the null hypothesis in favor of the alternative. In the opposite case, the null hypothesis is accepted. The bigger the value of the t-statistic, the easier for the researcher (and the higher her/his confidence) to reject the null hypothesis.
 I remind that the level of significance associated with the t-statistic corresponds to the probability of incorrectly rejecting the null hypothesis when the null is true (i.e. false positive). 
 
-What is the implication? This means that by assuming normally distributed returns, under the null hypothesis (no predictability existing), by testing 100 strategies, respectively 10,5,1 will present at-stat higher than respectively 1.64,1.96,2.58 merely due to chance. In these 10,5,1 cases, the researcher would be incorrectly induced to reject the null hypothesis in favor of predictability. In other words, the more strategies we test, the more strategies with a significant t-statistic we will encounter.
+What is the implication? This means that by assuming normally distributed returns, under the null hypothesis (no predictability existing), by testing 100 strategies, respectively 10,5,1 will present at-stat higher than 1.64,1.96,2.58 merely due to chance. In these 10,5,1 cases, the researcher would be incorrectly induced to reject the null hypothesis in favor of predictability. In other words, the more strategies we test, the more strategies with a significant t-statistic we will encounter.
 
 This reasoning can also be translated to the Sharpe Ratio. The Sharpe Ratio is directly related to the $t-statistic$, as  $t-statistic = \sqrt{n}SR$. Similarly as before, the higher the SR, the higher the likelihood of rejecting the null hypothesis of non-predictability. In other words, the higher the SR, the smaller the probability that our SR is purely due to chance (noise in the data), but reflects instead true predictability that our investment signal captures. 
 
+Given that at the beginning, we also specified that we expect the signal to predict returns with a negative sign, our test becomes a one-sided test (as we would not have accepted values in the left tail of the distribution i.e. positive predictability). The level of significance of 10%, 5%, or 1% hence translates to t-stat values of 1.28, 1.645, 1.96. 
+
 ### Probability of false discoveries when testing on different markets
 
-A solution to reduce false positives is to test the same signal on more (uncorrelated) markets. The markets to select are the ones that show similar dynamics and from where we might expect similar predictability to be picked up by the signal. An example is the currency and bonds markets, where factors like growth/inflation affect both asset classes (with opposite signs). Then, the probability of having such an SR or bigger  under the null hypothesis (no-predictability) in both markets, which I term here as the probability of having a false positive, is given by the product:
+A solution to reduce false positives is to test the same signal on more (uncorrelated) markets. The markets to select are the ones that show similar dynamics and from where we might expect similar predictability to be picked up by the signal. An example is the currency and bonds markets, where an alpha signal like growth affects both asset classes (with opposite signs). Then, the probability of having a specific SR or bigger  under the null hypothesis (no-predictability) in both markets, which I term here as the probability of having a false positive, is given by the product:
 
 $$
 \begin{align}
